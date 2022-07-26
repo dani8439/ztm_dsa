@@ -41,4 +41,8 @@ How do we determine who has better code? (Faster runtime?) What's good code, wha
 
 When we talk about Big-O and scalability of our code, what we mean is that as we grow bigger and bigger with our input how much does the algorithm or the function slow down. 
 
-If the list of characters in finding nemo increases, how many more operations do we have to do. That's all it is. This is what we call **algorithmic efficiency**
+If the list of characters in finding nemo increases, how many more operations do we have to do. That's all it is. This is what we call **algorithmic efficiency**. Big-O explains this concept. Remember the array that just had Nemo? As we increased that array to have more characters, and then we created the massive array of 100000, the number of operations, the number of things we had to do in the loop increased over and over. Different functions have different Big-O complexities. The number of operations can increase really fast, and others don't. 
+
+Just remember when we talk about Big O and scalability of code we simply mean when we grow bigger and bigger with our input, how much does the algorithm slow down? The less it slows down, or the slower it slows down, the better it is. 
+
+Instead of using `performance.now()` and using time to measure the efficiency of our function, we can just calculate how many operations our computer has to perform, because each operation takes time on the computer. Big O allows us and concerns us with how many steps it takes in a function. 
