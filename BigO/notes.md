@@ -7,3 +7,38 @@ What are we talking about here? Big O asymptotic analysis. Can tell us how well 
 1. Readable (can others read it)
 2. Scalable (Code that can scale, Big O notation allows us to read this sort of thing).
 
+# Big O and Scalability 
+
+JS lets us measure the performance of a function. Built into the browser. Can do this by saying: 
+
+```js
+const nemo = ['nemo'];
+
+function findNemo(array) {
+    let t0 = performance.now();
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'nemo') {
+            console.log('Found NEMO!');
+        }
+    }
+    let t1 = performance.now();
+    console.log('Call to find Nemo took ' + (t1 - t0) + 'milliseconds');
+}
+
+findNemo(nemo); // Found NEMO!
+```
+
+
+`performance.now()` is built into the browser. Takes very little time for above. But what if we had a bigger array? 
+
+Takes longer. Computers are very fast, but we need bigger and bigger arrays for it to take longer, say Arrays with 100000 Nemo's. Runtime takes longer. 
+
+Problem is if we take the code and run on my computer, my runtime will be different than his. All depends on how powerful the CPU in the computer is, what language you're using, what programs are running, etc. All these factors influence runtime. 
+
+How do we determine who has better code? (Faster runtime?) What's good code, what's bad, and what can scale? How can we determine that/ 
+
+`Big O` notation is the language we use when determining how long a language takes to run. Can take algorithms using Big O, saying which one is better than the other in terms of scale, regardless of computer differences? (Big-O complexity chart). 
+
+When we talk about Big-O and scalability of our code, what we mean is that as we grow bigger and bigger with our input how much does the algorithm or the function slow down. 
+
+If the list of characters in finding nemo increases, how many more operations do we have to do. That's all it is. This is what we call **algorithmic efficiency**
