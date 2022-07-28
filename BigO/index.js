@@ -16,3 +16,5 @@ function findNemo(array) {
 
 findNemo(everyone); // Found Nemo!
 findNemo(large); // Found Nemo! 
+
+////// O(n)

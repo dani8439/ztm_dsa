@@ -46,3 +46,28 @@ If the list of characters in finding nemo increases, how many more operations do
 Just remember when we talk about Big O and scalability of code we simply mean when we grow bigger and bigger with our input, how much does the algorithm slow down? The less it slows down, or the slower it slows down, the better it is. 
 
 Instead of using `performance.now()` and using time to measure the efficiency of our function, we can just calculate how many operations our computer has to perform, because each operation takes time on the computer. Big O allows us and concerns us with how many steps it takes in a function. 
+
+# O(n)
+
+What is the Big O of the function `findingNemo()`? A runtime is simply how long it takes something to run. With an array of 4, it's 4 operations. With 5 it's 5, and so on and so on. The more items in the array, the more operations. Linear. 
+
+The `findingNemo()` function has a Big-0 notation of `O(n)`. Big O of (n) or of **Linear Time**. It takes linear time to find Nemo. 
+
+Where does this `(n)` come from? The `n` can be anything, can be x, fish, etc. Just an arbitrary letter. Usually give `n` when it comes to Big O. `n` simply means that the Big-O depends on the number of inputs. The number of fish. If we just had the nemo array, it would be `O(1)`, the `everyone` array it would be `O(10)`, the large array `O(10000)`. As we increase the operations we see it increases linearly. 
+
+`O(n)` is the most common notation you'll find. It's in the yellow region of the chart that says **Fair.** Just a straight line. Operations increases by same amount. Big O focuses on how quickly runtime grows. That's what scalability means. As the function grows larger and larger, does it scale? Another way to think about it is this, if we had a compression algorithm, the funciton is the compression, the input is the box, what's the Big O notation of the function. If we had one element, it'll just compress 1 item, if we had multiple, we have to run each box. 
+
+```js
+// ES5
+function compressAllBoxes(boxes) {
+    boxes.forEach(function(item) {
+        console.log(item);
+    });
+}
+
+// ES6
+const compressAllBoxes = boxes => {
+    boxes.forEach(box => console.log(box));
+}
+```
+As the input increases, the number of boxes increases linearly. That is **O(n) - Linear Time** *Proportionally*. 
