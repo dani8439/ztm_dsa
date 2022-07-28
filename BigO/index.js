@@ -18,3 +18,16 @@ findNemo(everyone); // Found Nemo!
 findNemo(large); // Found Nemo! 
 
 ////// O(n)
+
+/// 0(1)
+
+const boxes = [0,1,2,3,4,5];
+function logFirstTwoBoxes(boxes) {
+    console.log(boxes[0]); // O(1)
+    console.log(boxes[1]); // O(1)
+}
+
+logFirstTwoBoxes(boxes); // O(2)
+
+// 0
+// 1

@@ -71,3 +71,37 @@ const compressAllBoxes = boxes => {
 }
 ```
 As the input increases, the number of boxes increases linearly. That is **O(n) - Linear Time** *Proportionally*. 
+
+# O(1)
+
+```js
+function compressFirstBox(boxes) {
+    console.log(boxes[0]);
+}
+```
+
+A function that's logging out the first item in the box. What's the Big O of this function? How many steps or operations does it take if the boxes are increased from 0 to 10, to 10000.
+
+**O(1) - Constant Time** an O of 1. No matter how many times the boxes increase, we're always just grabbing the first item in the array. 
+
+If we had an array of boxes, and run it through the function that just takes the first item, the number is always 1. It is a *constant time*. Look at it on a graph, it's constant. 1 operation every time. Same number of operations every time, just constant time. Number of operations stays flat. 
+
+What if we do something different? 
+
+```js
+function logFirstTwoBoxes(boxes) {
+    console.log(boxes[0]); // 0(1)
+    console.log(boxes[1]); // 0(1)
+}
+
+logFirstTwoBoxes(boxes);
+
+// 0
+// 1
+```
+
+How do we measure the Big O of this? It's an O(1) for both. Each time the function runs two operations. The function in total is running 0(2) everytime. Always 2 for the function. If we had 3 operations, it would be O(3). But overall it's still a flat line. When it comes to constant time, we don't care about the nitty-gritty O(1), O(2), O(100). We round it down to O(1), so that we have **Constant Time**. It's a flat line. In terms of scalability, doesn't matter how many inputs we have, it's always constant.
+
+**Keep in mind: Inputs can be any type of data. Not just arrays.**
+
+If we look at it on a graph, O(1) is in the dark green excellent area of the graph. Always runs the same. Predictibility is very very nice. 
