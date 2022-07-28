@@ -105,3 +105,20 @@ How do we measure the Big O of this? It's an O(1) for both. Each time the functi
 **Keep in mind: Inputs can be any type of data. Not just arrays.**
 
 If we look at it on a graph, O(1) is in the dark green excellent area of the graph. Always runs the same. Predictibility is very very nice. 
+
+# Exercise: Big O calculation
+
+```js
+// What is the Big O of the below function? (Hint, you may want to go line by line)
+function funChallenge(input) {
+  let a = 10;
+  a = 50 + 3;
+
+  for (let i = 0; i < input.length; i++) {
+    anotherFunction();
+    let stranger = true;
+    a++;
+  }
+  return a;
+}
+```
