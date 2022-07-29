@@ -200,3 +200,15 @@ function anotherFunChallenge(input) {
 
 // BIG O(4 + 7n)
 ```
+
+# Simplifying Big O
+
+In the previous exercise, we had to do some calculation, kind of annoying, add things up, `Big O(4 + 5n)`. In interviews you're never going to do this. In interviews there are sets of rules to follow. Can just look at a function and figure out what type of big O it is. Exercise 2 just turns into `Big O(n)`. The first exercise also just turns into `Big O(n)`. 
+
+It's a nifty little trick. 
+
+**Rule Book**
+Rule 1: Worst Case 
+Rule 2: Remove Constants 
+Rule 3: Different terms for inputs 
+Rule 4: Drop Non Dominants
