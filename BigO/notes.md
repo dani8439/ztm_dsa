@@ -121,4 +121,35 @@ function funChallenge(input) {
   }
   return a;
 }
+
+// O(n) ? Don't know the complexity of anotherFunction() and what it's doing? 
 ```
+
+# Solution Big O Calculation
+Meant to be difficult. Will never be asked to do something like this in an interview. 
+
+```js
+// What is the Big O of the below function? (Hint, you may want to go line by line)
+function funChallenge(input) {
+   // input doesn't really matter. 
+   // assign variable a as 10. Based on convention some people say assignment shouldn't go to big O, others do.
+  let a = 10; // O(1) only running once 
+  a = 50 + 3; // reassigning a. Once again O(1)
+
+  // a loop, looping over length of input. 
+  for (let i = 0; i < input.length; i++) { // O(n) n is the input
+  // loops are linear time. 
+  // no idea what anotherFunction() is. 
+    anotherFunction(); // being called, depends on how big our input is, so O(n)
+    let stranger = true; // random assignment. Runs as many times as the loop happens. // O(n)
+    a++; // a+1 incrementing whatever number a is. 53/54/55/56, etc runs O(n) times. Depends how many times by the input.
+  }
+  return a; // O(1) run just once. 
+}
+
+funChallenge()
+
+// 3 + n + n + n + n (4n) 
+// Big O(3 + 4n) answer
+```
+
