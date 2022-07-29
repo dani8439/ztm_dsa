@@ -270,3 +270,43 @@ function compressBoxesTwice(boxes) {
 2 For loops. Both O(n). 2 separate steps. So we add them together and it becomes `O(2n)`. In an interview, this doesn't really matter because we drop the constants, so it just becomes O(n).
 
 Just remember to drop the constants. Makes life easier. Only see numbers in a few caes on the chart. 
+
+# Big O Rule 3: Different terms for inputs
+
+A tricky one.
+
+```js
+function compressBoxesTwice(boxes) {
+    boxes.forEach(function(boxes) {
+        console.log(boxes);
+    });
+
+    boxes.forEach(function(boxes) {
+        console.log(boxes);
+    });
+}
+
+// O(2n) but because we drop the constants it becomes O(n)
+```
+Third rule states different terms for inputs. What if we had `boxes, boxes2` as the 2 parameters? And the second for loop loops over the 2nd boxes? What happens for this? What is the big O? 
+
+```js
+function compressBoxesTwice(boxes, boxes2) {
+    // depends on how big first input is
+    boxes.forEach(function(boxes) {
+        console.log(boxes);
+    });
+
+    // depends on how big 2nd boxes is.
+    boxes2.forEach(function(boxes) {
+        console.log(boxes);
+    });
+}
+
+// a is for first for loop
+// b is for the second loop.
+//O(a + b)  
+```
+O of boxes 1 + boxes 2. `O(a + b)`. Not looping over the same items, so different "n". 
+
+What happens if the loops are nested though? 
