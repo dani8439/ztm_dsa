@@ -212,3 +212,17 @@ Rule 1: Worst Case
 Rule 2: Remove Constants 
 Rule 3: Different terms for inputs 
 Rule 4: Drop Non Dominants
+
+# Big O Rule 1: Worst Case
+
+When calculating Big O we always think about worst case. What do we mean by that? Going back to the `findingNemo()` example, may have been screaming at me that the code is not efficient. If you look at the function, we're looping at the entire array to find nemo. 
+
+With the `everyone` array, nemo was only 4th. But we still ran the loop 10 times and ran through the entire array. Not efficient. Should have stopped once we found Nemo. All the other runs are pretty wasteful. 
+
+Can have a break. So just add a `break` after condition was met that we found nemo. Then if we do that and click run, once we found nemo, we're done. 
+
+When it comes to Big O, Big O only cares about the wort case. Worst case is that Nemo is at the very end instead of being hte 4th item. So even if we have the break statement, still going to run it ten times. Best case is nemo is at the beginning. Always Big O(n). 
+
+Very first rule, we always care about what is the worst case scenario. When we talk about scalability, can't assume things are going well. 
+
+Even though `findNemo(everyone)` might be O(1) if Nemo is first in the array, it doesn't matter. Instead going to assume that O is big O (n) linear time. Have to iterate through all of it. Big O doesn't really care. When we talk about Big O we're talking about worst case. 
