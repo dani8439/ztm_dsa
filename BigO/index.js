@@ -57,7 +57,7 @@ function anotherFunChallenge(input) {
   let b = 10; // assignment O(1)
   let c = 50; // assignment O(1)
   for (let i = 0; i < input; i++) { // loop O(n) runs based on the input 
-    let x = i + 1; // O(n) ? O(1)
+    let x = i + 1; // O(n) ? O(1) -- O(n) because run however many times input is, not just once.
     let y = i + 2; // O(n) ? O(1)
     let z = i + 3; // O(n) ? O(1)
 
