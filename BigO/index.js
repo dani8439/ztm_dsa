@@ -48,3 +48,25 @@ function funChallenge(input) {
 }
 
 // O(n) ? Don't know the complexity of anotherFunction() and what it's doing? 
+
+// Big O Exercise 2
+
+// What is the Big O of the below function? (Hint, you may want to go line by line)
+function anotherFunChallenge(input) {
+  let a = 5; // assignment O(1)
+  let b = 10; // assignment O(1)
+  let c = 50; // assignment O(1)
+  for (let i = 0; i < input; i++) { // loop O(n) runs based on the input 
+    let x = i + 1; // O(n) ? O(1)
+    let y = i + 2; // O(n) ? O(1)
+    let z = i + 3; // O(n) ? O(1)
+
+  }
+  for (let j = 0; j < input; j++) { // O(n)
+    let p = j * 2; // O(n) ? O(1) 
+    let q = j * 2; // O(n) ? O(1)
+  }
+  let whoAmI = "I don't know"; // O(1)
+}
+
+// 4 + 7n = O(n)
