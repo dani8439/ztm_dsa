@@ -226,3 +226,47 @@ When it comes to Big O, Big O only cares about the wort case. Worst case is that
 Very first rule, we always care about what is the worst case scenario. When we talk about scalability, can't assume things are going well. 
 
 Even though `findNemo(everyone)` might be O(1) if Nemo is first in the array, it doesn't matter. Instead going to assume that O is big O (n) linear time. Have to iterate through all of it. Big O doesn't really care. When we talk about Big O we're talking about worst case. 
+
+# Big O: Rule 2 Remove Constants
+
+```js
+function printFirstItemThenFirstHalfThenSayHi100Times(items) {
+    console.log(items[0]);
+
+    var middleIndex = Math.floor(items.length / 2);
+    var index = 0;
+
+    while (index < middleIndex) {
+        console.log(items[index]);
+        index++;
+    }
+
+    for (var i = 0; i < 100; i++) {
+        console.log('hi');
+    }
+}
+```
+
+Written the most ridiculous function ever. Useless function. Big O is O(1 + n/2 + 100) (Half of whatever the items are so it's n/2). Trick is not looping over items array, just 100 always 100. 
+
+Rule 2 states we want to drop the constants. Don't want to care that the big O is O(n/2 + 101). We only care about what we saw on the chart. So it turns into O(n/2 + 1). As n gets larger and larger, dividing by 2 has a decreasingly signficant effect. So we drop the constant. And it becomes O(n + 1). And 1 is insignificant, just becomes O(n).
+
+What if we had a function of O(a + 50000000). Doesn't matter, drop the constants and it becomes O(a).
+
+What if we have this function here? 
+
+```js
+function compressBoxesTwice(boxes) {
+    boxes.forEach(function(boxes) {
+        console.log(boxes);
+    });
+
+    boxes.forEach(function(boxes) {
+        console.log(boxes);
+    });
+}
+```
+
+2 For loops. Both O(n). 2 separate steps. So we add them together and it becomes `O(2n)`. In an interview, this doesn't really matter because we drop the constants, so it just becomes O(n).
+
+Just remember to drop the constants. Makes life easier. Only see numbers in a few caes on the chart. 
