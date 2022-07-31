@@ -310,3 +310,5 @@ function compressBoxesTwice(boxes, boxes2) {
 O of boxes 1 + boxes 2. `O(a + b)`. Not looping over the same items, so different "n". 
 
 What happens if the loops are nested though? 
+
+# O(n^2)

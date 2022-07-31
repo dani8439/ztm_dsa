@@ -70,3 +70,5 @@ function anotherFunChallenge(input) {
 }
 
 // 4 + 7n = O(n)
+
+console.log("Line of Duty 😄");
