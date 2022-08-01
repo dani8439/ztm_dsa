@@ -462,4 +462,37 @@ Talking about memory or Space Complexity is similar to looking at time costs. We
 
 Up until now, we've just talked about how long something would take. But there's also the fact of memory. How much input the function can take. Might have limited capacity and might overflow. 
 
-What causes this space complexity? Adding Variables, Adding Data Structures, Function Calls, Allocations 
+What causes this space complexity? Adding Variables, Adding Data Structures, Function Calls, Allocations.
+
+# Exercise: Space Complexity
+
+```js
+function boooo(n) {
+  for (let i = 0; i < n.length; i++) {
+    console.log('booooo! 👻')
+  }
+}
+
+boooo([1,2,3,4,5])
+```
+
+What is the space complexity of it? Should it be O(n) because it's linear? The gotcha with space complexity, don't really care about the input. Only have control over what's inside the function. In the function, are we adding any space? No, not really. Just creating the `let i = 0` variable. Not creating any memory. 
+
+So this function only has a space complexity of `O(1)`. Nice and simple. 
+
+What if we have a different function? 
+
+```js
+function arrayOfHiNTimes(n) {
+  let hiArray = [];
+  for (let i = 0; i < n; i++) {
+    hiArray[i] = 'hi';
+  }
+  return hiArray;
+}
+
+arrayOfHiNTimes(6) // (6) ['hi', 'hi', 'hi', 'hi', 'hi', 'hi']
+```
+What is the space complexity of this? O(n)? Because we're creating a new data structure, and adding an item from memory n times. 
+
+When it comes to space complexity, you're either adding additional memory that you need to use that's sometimes a big concern, and sometimes there isn't. Sometimes there's a trade off between saving time and space. Have to decide which one you're optimizing for. 
