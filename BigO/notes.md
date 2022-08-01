@@ -413,3 +413,5 @@ O(x^2+3+100+x/2)
 Based on Rule 4, it becomes O(x^2) because that's the most significant. It grows more than the others. We're only worrying about scale. Going back to past examples, make sense to drop the extraneous and only use the most important. 
 
 If we had another loop buried within, it would become O(n^3), and so on for each loop, although bad idea to have more than 3 nested loops. Scales poorly.
+
+# Big O Cheatsheet. 
