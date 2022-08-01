@@ -414,4 +414,23 @@ Based on Rule 4, it becomes O(x^2) because that's the most significant. It grows
 
 If we had another loop buried within, it would become O(n^3), and so on for each loop, although bad idea to have more than 3 nested loops. Scales poorly.
 
-# Big O Cheatsheet. 
+# Big O Cheatsheet - see attached pdf. 
+
+# What does this all mean?
+May have noticed something when talking about Big O. Scalable means we worry about large input. What does the end of the graph look like? 
+
+If our function is only worried about small inputs, Big O won't matter as much. All the lines are kind of bunched up together the same. Is that real life? No. 
+
+Never know, when we write code, want to write code that can scale rather than going back and fixing things when it scales and code gets out of hand. Thinking about code long term means thinking to scale and the big picture. 
+
+Graph we've talked about is part of (https://www.bigocheatsheet.com/)[https://www.bigocheatsheet.com/].
+
+If you scroll down see different Big O notations for different data structures depending on what we're doing. 
+
+**Data Structures + Algorithms = Programs**
+
+Data structures are simply ways to store data.
+
+Algorithms are simply functions or ways to use the DS to write our programs. Our instructions for machines/computers are our programs. 
+
+Remember 2 rules of good code, readable and scalable. 
