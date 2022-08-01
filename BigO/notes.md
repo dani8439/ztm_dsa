@@ -375,3 +375,41 @@ O of n squared, it's pretty sloped.
 If we go back to our Rule 3 that we were discussing, different terms for inputs, we had the example of `compressBoxes()` and `O(a + b)` because we had two different inputs. If they were nested instead, then the Big O would have been O(a*b). 
 
 Different arrays, means different notations for each array as we don't know the lengths. Any step that happens in the same indentation (one after the other), you add. Whereas with nesting indentation, you mutliply. Different inputs should have different variables.
+
+# Big O Rule 4: Drop Non dominants 
+
+Or drop non dominant terms. 
+
+What do we mean? 
+
+```js
+function printAllNumbersThenAllPairSums(numbers) {
+
+  console.log('these are the numbers:');
+  numbers.forEach(function(number) {
+    console.log(number);
+  });
+
+  console.log('and these are their sums:');
+  numbers.forEach(function(firstNumber) {
+    numbers.forEach(function(secondNumber) {
+        // adding each number one after the other
+      console.log(firstNumber + secondNumber);
+    });
+  });
+}
+
+printAllNumbersThenAllPairSums([1,2,3,4,5])
+```
+
+First for loop is O(n + O^2)
+
+Rule 4 means we want to drop the non dominant terms. So we drop the `n` and it's just `O(n^2)`, because the power of 2 is more important than just the n. 
+
+Say for example we have one that's:
+
+O(x^2+3+100+x/2)
+
+Based on Rule 4, it becomes O(x^2) because that's the most significant. It grows more than the others. We're only worrying about scale. Going back to past examples, make sense to drop the extraneous and only use the most important. 
+
+If we had another loop buried within, it would become O(n^3), and so on for each loop, although bad idea to have more than 3 nested loops. Scales poorly.
