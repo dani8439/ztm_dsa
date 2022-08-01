@@ -453,3 +453,13 @@ Two things that we want to consider as engineers for scalable. One is Speed. How
 Computers have limited memory. Back in the day, we had much less memory, now we have more, but it's not infinite. 
 
 3 Pillars of code: Readable code 💎 Memory 💾 (Space Complexity) Speed ⏲️ (Time Complexity)
+
+# Space Complexity 🚀
+
+When a program executes, it has 2 ways to remember things. The heap & the stack. The heap is where we store variables. The stack is the call stack, where we keep track of our function calls. Sometimes we want to optimize for using less memory instead of less time. 
+
+Talking about memory or Space Complexity is similar to looking at time costs. We simply look at the total size relative to the total input and see what new variables or memory has been allocated. 
+
+Up until now, we've just talked about how long something would take. But there's also the fact of memory. How much input the function can take. Might have limited capacity and might overflow. 
+
+What causes this space complexity? Adding Variables, Adding Data Structures, Function Calls, Allocations 
