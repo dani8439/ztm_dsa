@@ -439,3 +439,17 @@ Remember 2 rules of good code, readable and scalable.
 Most likely won't encounter it. The most expensive one, the steepest of them all. **Factorial time**. Or "Oh no!" 
 
 With O and factorial (!), with this it means that we're adding a nested loop for every input we have. 
+
+# 3 Pillars of Programming 
+
+*What is good code?*
+
+1. Readable
+
+2. Scalable 
+
+Two things that we want to consider as engineers for scalable. One is Speed. How fast is our runtime on the code. How much time does it take for a function to run, how many operations does it cost? Another aspect when it comes to machines. The other one is Memory.
+
+Computers have limited memory. Back in the day, we had much less memory, now we have more, but it's not infinite. 
+
+3 Pillars of code: Readable code 💎 Memory 💾 (Space Complexity) Speed ⏲️ (Time Complexity)
