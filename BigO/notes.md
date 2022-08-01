@@ -434,3 +434,8 @@ Data structures are simply ways to store data.
 Algorithms are simply functions or ways to use the DS to write our programs. Our instructions for machines/computers are our programs. 
 
 Remember 2 rules of good code, readable and scalable. 
+
+# O(n!)
+Most likely won't encounter it. The most expensive one, the steepest of them all. **Factorial time**. Or "Oh no!" 
+
+With O and factorial (!), with this it means that we're adding a nested loop for every input we have. 
