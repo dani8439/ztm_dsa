@@ -312,3 +312,66 @@ O of boxes 1 + boxes 2. `O(a + b)`. Not looping over the same items, so differen
 What happens if the loops are nested though? 
 
 # O(n^2)
+
+```js
+// Log all pairs of an array 
+const boxes = ['a', 'b', 'c', 'd', 'e'];
+
+function logAllPairsOfArray(array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            console.log(array[i], array[j])
+        }
+    }
+}
+
+// a a
+// a b
+// a c
+// a d
+// a e
+// b a
+// b b
+// b c
+// b d
+// b e
+// c a
+// c b
+// c c
+// c d
+// c e
+// d a
+// d b
+// d c
+// d d
+// d e
+// e a
+// e b
+// e c
+// e d
+// e e
+```
+What is the Big O of this? Good rule of thumb, if you see nested loops, instead of having two for loops one after the other, when you see loops that are nested, we use multiplication. 
+
+So it becomes:
+`O(n * n)`, which when we multiply becomes `O(n^2)` (O to the power of 2)
+
+```js
+// ES5
+function logAllPairsOfBoxes(boxes) {
+    boxes.forEach(function(firstBox) {
+        boxes.forEach(function(secondBox) {
+            console.log(firstBox, secondBox)
+        })
+    })
+}
+// O(n^2) O of Quadratic time. 
+```
+
+**O(n^2) O of Quadratic time** Means every time the number of elements increases, we have 4 operations we do. If we have 3 elements, it increases quadratically, meaning we have 9 operations (3 elements to the power of 2). Line is bent and increases quite fast. 
+
+O of n squared, it's pretty sloped. 
+
+If we go back to our Rule 3 that we were discussing, different terms for inputs, we had the example of `compressBoxes()` and `O(a + b)` because we had two different inputs. If they were nested instead, then the Big O would have been O(a*b). 
+
+Different arrays, means different notations for each array as we don't know the lengths. Any step that happens in the same indentation (one after the other), you add. Whereas with nesting indentation, you mutliply. Different inputs should have different variables.
