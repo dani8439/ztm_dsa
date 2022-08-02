@@ -528,3 +528,36 @@ What is the Big O of this operation? Because comparing dates within the array. D
 
 `'hehehdhdhehehhxhxheheheh'.length` 
 What's the Big O notation? Answer is, it depends. Depends on what language you're working on. Need to know how the method works on the string here. Different in each language. Might go 1x1 and count each letter. Depends on how built in operator works. In JS, `.length` is built in, it's a simple lookup. Not a function, it's a property of an object. Because of that, it's O(1). Constant time. 
+
+# Optional: JavaScript Loops
+
+Many ways to do loops.
+
+```js 
+function findNemo(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 'nemo') {
+      console.log('Found NEMO!');
+    }
+  }
+}
+
+// can be rewritten using ES6:
+const findNemo2 = array => {
+  array.forEach(fish => {
+    if(fish === 'nemo') {
+      console.log('Found Nemo!');
+    }
+  })
+}
+
+/// For Of Loop
+const findNemo3 = array => {
+  for (let fish of array) {
+    if(fish === 'nemo') {
+      console.log('Found Nemo!');
+    }
+  }
+}
+```
+Different ways of solving the problem, but some are more readable than others. 
