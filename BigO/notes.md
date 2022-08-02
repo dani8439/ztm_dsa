@@ -496,3 +496,35 @@ arrayOfHiNTimes(6) // (6) ['hi', 'hi', 'hi', 'hi', 'hi', 'hi']
 What is the space complexity of this? O(n)? Because we're creating a new data structure, and adding an item from memory n times. 
 
 When it comes to space complexity, you're either adding additional memory that you need to use that's sometimes a big concern, and sometimes there isn't. Sometimes there's a trade off between saving time and space. Have to decide which one you're optimizing for. 
+
+# Exercise: Twitter 
+
+Find 1st, Find Nth.... 
+
+```js
+// Twitter exercise 
+// Find 1st tweet, find nth...
+
+const array = ['hi', 'my', 'teddy'];
+array[0]; // O(1) 
+array[array.length-1]; // O(1) constant time because always that tweet. 
+```
+ Now boss comes back and wants to compare dates of the tweets. Array becomes an object
+
+```js
+const array2 = [{
+  tweet: 'hi',
+  data: 2012
+}, {
+  tweet: 'my',
+  date: 2014
+}, {
+  tweet: 'teddy', 
+  date: 2018
+}]; 
+```
+
+What is the Big O of this operation? Because comparing dates within the array. Doing nested loops. O(n^2) Might have to tell boss no this is a bad idea longterm, not scalable, costs the company a lot of money.
+
+`'hehehdhdhehehhxhxheheheh'.length` 
+What's the Big O notation? Answer is, it depends. Depends on what language you're working on. Need to know how the method works on the string here. Different in each language. Might go 1x1 and count each letter. Depends on how built in operator works. In JS, `.length` is built in, it's a simple lookup. Not a function, it's a property of an object. Because of that, it's O(1). Constant time. 
