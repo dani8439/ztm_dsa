@@ -561,3 +561,19 @@ const findNemo3 = array => {
 }
 ```
 Different ways of solving the problem, but some are more readable than others. 
+
+# Section Summary
+
+Big O says which function/algorithm is best? 
+
+When it comes to good code, we're concerned with readability and scalability. Big O allows us to measure scalable code. 
+
+Why do we care? Because there's no such thing as a free lunch. Save time and money for a company and you're a superstar. You won't find it in your day to day job, but should always keep it in the back of your mind. Big O is used to describe how efficient we can run our code. Saves company a lot of money if people that are hired know how to write efficient code. 
+
+Learned about Time Complexity and Space Complexity. Each one has trade offs. Big O is upper bound, always looking at worst case scenario. Time is how long it takes the algorithm to run. Space is the memory required to let it run. 
+
+Big O is how you can scale. Doesn't necessarily mean that O(n) is better than O(n^2). Scalability isn't the only factor, also readability. Maybe time complexity is less important than space complexity. Premature optimization can be the root of all evil. 
+
+Sometimes optimizing for time and space can negatively impact readability of the code. 
+
+Data needs to be sufficiently big to talk about scalability.
