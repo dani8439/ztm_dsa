@@ -24,3 +24,9 @@
 - Recursion
 
 # Exercise: Google Interview 
+Matching pair, that is equal to a sum given. Array. 
+
+`[1, 2, 3, 9] Sum = 8`
+`[1, 2, 4, 4] Sum = 8`
+
+Ordered in ascending order, in an array. Can't repeat same element at same index twice. Always numbers, negatives and positives. Time complexity? 
