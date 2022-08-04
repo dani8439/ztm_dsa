@@ -134,3 +134,8 @@ function containsCommonItem2(arr1, arr2) {
 ```
 
 Might want to change second solution to two separate functions instead of two separate loops to make clean, modular code. Because function might be doing too many things. Might just mention that in the interview to show you're thinking about it. 
+
+# Review Google Interview
+
+```js
+```
