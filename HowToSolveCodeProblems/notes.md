@@ -84,3 +84,53 @@ function containsCommonItem(arr1, arr2) {
     // two loops but not nested, so better performance right away. 
     Big O will become O(a + b) because it's not nested and two steps
 }
+
+# Exercise: Interview Question 2
+
+This solution when it comes to time complexity is better. It's O(a + b) rather than being O(n^2)
+
+```js
+function containsCommonItem(arr1, arr2) {
+    // loop through first array and create object where properties === items in teh array 
+    // loop through second array and check if item in second array exists on created object. 
+    // two loops but not nested, so better performance right away. 
+
+    let map = {};
+    for (let i = 0; i < arr1.length; i++) {
+        // if map.a exists it will return true, if it doesn't, it will say false
+        if (!map[arr1[i]]) {
+            const item = arr1[i];
+            map[item] = true;
+            // by the end we'll have an object that will have property { a: true } on the first loop, will loop through until we have a map object that has all the items of hte first array equal to true
+        }
+    }
+    console.log(map);
+    // loop through second array and check if item in second array exists on created object 
+    for (let j = 0; j < arr2.length; j++) {
+        if (map[array2[j]]) {
+        // will return undefined if it doesn't exist
+            return true
+
+        }
+    }
+    return false
+}
+
+containsCommonItem(array1, array2)
+```
+Okay it works, but does it work if the array is different? What if it's a number, or null, or empty? (Yes). What if there's not two arrays? Uh oh. It breaks. Want to think about an discuss with interviewer how to break the function and what checks to do, such as making sure what inputs you're getting are right. 
+
+Can just tell the interviewer what you would do to code to check input is correct, don't have to write the code, will get points for that. Can talk about renaming the values of map, i, j, etc, thinking about it so they have more meaning. But i and j are standard for for loops and indexes. 
+
+How would you test the function that it gives the expected result of true or false. Might say run some unit tests.
+
+Downside to this solution is only numbers, strings and booleans can be used correctly. Object properties, especially the way we're using a js object, might not work if we're using non literal values. Code could be a bit more readable. There is a cleaner way of doing this in js. 
+
+```js
+function containsCommonItem2(arr1, arr2) {
+    // check the first array, iterate over the items in it. If some of the items include items in array 2, just return true or false
+    return arr1.some(item => arr2.includes(item))
+}
+```
+
+Might want to change second solution to two separate functions instead of two separate loops to make clean, modular code. 
