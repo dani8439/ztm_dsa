@@ -55,3 +55,25 @@ Math.pow(6, 1000);
 As the number becomes too large to store in our RAM, need to represent it in something that's tangible, in JS's case, it's `Infinity`. 
 
 Each data type has a number of bits associated with it, so it can be stored in the system. The system allocates that storage and the CPU reads that storage. A data structure is this, an arrangement of data. Can define way you interact with the data and how it's arranged in RAM. Some are organized right next to each other, some are apart, have pros and cons in terms of access and right. Our goal is to minimize the operation that we need to do for the CPU to write information. That's why Data Structures are so powerful. We have a way now to think how Data Structures effect the process of our computers. 
+
+# Data Structures in Different Languages
+
+**Data Structures** 
+- Arrays
+- Stacks
+- Queues 
+- Linked Listes
+- Trees
+- Tries 
+- Graphs 
+- Hash Tables 
+
+**Algorithms**
+- Sorting 
+- Dynamic Programming
+- BFS + DFS (Searching)
+- Recursion
+
+Each language has its own data type. JS has numbers, strings, booleans, undefined. Each language has data structures to organize these data types. In JS we have Arrays and Objects that we use. They are data types. Allows us to structure and organize information. 
+
+Most languages have enough data structures and data types for us to build and create our own data structures. If JS doesn't have stacks, we can build one. 
