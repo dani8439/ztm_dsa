@@ -77,3 +77,16 @@ Each data type has a number of bits associated with it, so it can be stored in t
 Each language has its own data type. JS has numbers, strings, booleans, undefined. Each language has data structures to organize these data types. In JS we have Arrays and Objects that we use. They are data types. Allows us to structure and organize information. 
 
 Most languages have enough data structures and data types for us to build and create our own data structures. If JS doesn't have stacks, we can build one. 
+
+# Operations on Data Structures 
+
+What are the various operations that can be performed on different data structures? Data structures are simply ways to organize data on our computers. DS's we'll see are simple variations of how we store the data. Each DS has their trade offs. Some are good at certain operations, others are good at other operations. 
+
+**Insertion** - Add a new data item in a given collection of items.
+**Deletion** - Delete data. 
+**Traversal** - access each data item exactly once so it can be processed. 
+**Searching** - We want to find out the location of the item if it exists in a collection. 
+**Sorting** - Data that is sorting. 
+**Access** - Main one, most important, how do we access this data we have on our computer. 
+
+Each Data Structure has pros and cons for each operation.
