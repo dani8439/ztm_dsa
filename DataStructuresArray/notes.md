@@ -49,3 +49,26 @@ strings.splice(2, 0, 'alien'); // O(n)
 
 console.log(strings)
 ```
+
+# Static vs Dynamic Arrays 
+
+What is the difference between the two?
+
+The one limitation of **static arrays** is that they are fixed in size. You need to specify the number of elements your array will hold ahead of time. Because arrays are allocated in adjacent blocks of memory when created, no guarantee that after we've allocated 7 shelves in memory we can keep adding on, especially in order. We solve this problem with static arrays, by using Dynamic arrays.
+
+**Dynamic Arrays** allow us to copy and rebuild an array at a new location, with more memory if we wanted more memory. We copy the static array, allocate a certain amount of memory, and add the new item. 
+
+In JavaScript you don't really allocate memory, works like dynamic arrays. Unlike C++ where you have to define right from the start. Automatic resizing too with JS. 
+
+Dynamic arrays expand as you add more elements, so don't need to determine size ahead of time. 
+
+May have noticed on the list there's an astrisk next to append. 
+
+lookup O(1)
+append* O(1)
+insert O(n)
+delete O(n)
+
+*can be O(n)
+
+Why? If we remember our array, and underneath the hood JS only created 4 blocks of memory for an array, and we add another letter, because it's a dynamic array, it loops over the items, copies them, moves them to a different location with now 8 blocks of space (it usually doubles the space), so we can keep adding onto it here. So because it does looping it becomes O(n).

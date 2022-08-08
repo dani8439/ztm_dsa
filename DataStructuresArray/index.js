@@ -27,3 +27,9 @@ strings.splice(2, 0, 'alien'); // O(n)
 // to shift, we shifted the indexes after b, and c, over. So looped through after that. So it's O(n/2) because we did half of the array. But our rule of removing constants and simplifying, it becomes O(n)
 
 console.log(strings)
+
+// Dynamic vs Static Arrays
+// C++
+// int a[20]; array with 20 items
+// int b[5] {1,2,3,4,5}
+
