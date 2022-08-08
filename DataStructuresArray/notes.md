@@ -71,4 +71,50 @@ delete O(n)
 
 *can be O(n)
 
-Why? If we remember our array, and underneath the hood JS only created 4 blocks of memory for an array, and we add another letter, because it's a dynamic array, it loops over the items, copies them, moves them to a different location with now 8 blocks of space (it usually doubles the space), so we can keep adding onto it here. So because it does looping it becomes O(n).
+Why? If we remember our array, and underneath the hood JS only created 4 blocks of memory for an array, and we add another letter, because it's a dynamic array, it loops over the items, copies them, moves them to a different location with now 8 blocks of space (it usually doubles the space), so we can keep adding onto it here. So because it does looping it becomes O(n). (This is with `.push()`) Can't assume it's O(1) sometimes it's O(n).
+
+# Classes in JS 
+
+Reference Type 
+
+```js
+var object1 = { value: 10 };
+var object2 = object1;
+var object3 = { value: 10 };
+```
+
+Context 
+
+```js
+const object4 = {
+    a: function() {
+        console.log(this)
+    }
+}
+```
+Instantiation
+
+```js
+class Player {
+    constructor(name, type) {
+        console.log(this);
+        this.name = name;
+        this.type = type;
+    }
+    introduce() {
+        console.log(`Hi I am ${this.name}, I'm a ${this.type}`)
+    }
+}
+
+class Wizard extends Player {
+    constructor(name, type) {
+        super(name, type)
+    }
+    play() {
+        console.log(`WEEEEE I'm a ${this.type}`);
+    }
+}
+
+const wizard = new Wizard('Shelly', 'Healer');
+const wizard2 = new Wizard('Shawn', 'Dark Magic');
+```
