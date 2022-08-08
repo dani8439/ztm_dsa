@@ -33,3 +33,53 @@ console.log(strings)
 // int a[20]; array with 20 items
 // int b[5] {1,2,3,4,5}
 
+/// Implementing Arrays 
+
+class MyArray {
+    constructor() {
+        this.length = 0;
+        this.data = {};
+    }
+
+    get(index) {  //O(1)
+        return this.data[index];
+    }
+
+    push(item) { // O(1)
+        this.data[this.length] = item; 
+        this.length++;
+        return this.length;
+    }
+
+    pop() { // O(n)
+        const lastItem = this.data[this.length-1]; 
+        delete this.data[this.length-1];
+        this.length--;
+        return lastItem;
+    }
+
+    delete(index) { // O(n)
+        const item = this.data[index];
+        this.shiftItems(index); 
+    }
+
+    shiftItems(index) { // O(n)
+        for (let i = index; i < this.length - 1; i++) {
+            // shifting items to the left by 1
+            this.data[i] = this.data[i+1];
+        }
+       delete this.data[this.length-1];
+       this.length--;
+    }
+}
+
+const newArray = new MyArray();
+newArray.push('hi');
+newArray.push('you');
+newArray.push('!');
+newArray.delete(0);
+newArray.push('are');
+newArray.push('nice');
+newArray.delete(1);
+
+console.log(newArray);

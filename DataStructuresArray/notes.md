@@ -118,3 +118,9 @@ class Wizard extends Player {
 const wizard = new Wizard('Shelly', 'Healer');
 const wizard2 = new Wizard('Shawn', 'Dark Magic');
 ```
+
+# Implementing an Array 
+
+Now that we know how to use arrays, where they are fast and where they are slow, going to get into a part that isn't crucial for interviews. 
+
+Arrays in JS are objects with number based keys.
