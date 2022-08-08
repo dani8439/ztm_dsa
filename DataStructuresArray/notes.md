@@ -124,3 +124,6 @@ const wizard2 = new Wizard('Shawn', 'Dark Magic');
 Now that we know how to use arrays, where they are fast and where they are slow, going to get into a part that isn't crucial for interviews. 
 
 Arrays in JS are objects with number based keys.
+
+# Strings and Arrays
+Common interview trick. In interviews, should treat any string questions as an array question. Strings are just an array of characters. Most of the time when you get a question like reverse a string, is to convert it to an array, do some kind of operation, and then returning it as a string after you've finished the operations with them. Common interview question. 
