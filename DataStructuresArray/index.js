@@ -90,9 +90,39 @@ console.log(newArray);
 // 'Hi My name is Andrei' should be:
 // 'ierdnA si eman iH'
 
-function reverse(str) {
-    const reversed =  str.split('').reverse().join('');
-    return reversed;
+// function reverse(str) {
+//     const reversed =  str.split('').reverse().join('');
+//     return reversed;
 
-    // or return str.split('').reverse().join('');
+//     // or return str.split('').reverse().join('');
+// }
+
+/// Solution: Reverse a String
+function reverse(str) {
+    // check input
+    if (!str || str.length < 2 || typeof str !== 'string') {
+        return 'hmm that is not good';
+
+    }
+    const backwards = [];
+    const totalItems = str.length -1;
+    for(let i = totalItems; i >= 0; i--) {
+        backwards.push(str[i]);
+    }
+    console.log(backwards);
+
+    return backwards.join(''); 
 }
+
+reverse('Hi My name is Andrei');
+
+// Using built in methods to make it more efficient
+function reverse2(str) {
+    return str.split('').reverse().join('');
+}
+
+// Using ES6
+const reverse3 = str => str.split('').reverse().join('');
+
+// Fancier 
+const reverse4 = str => [...str].reverse().join('');
