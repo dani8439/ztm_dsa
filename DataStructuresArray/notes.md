@@ -127,3 +127,19 @@ Arrays in JS are objects with number based keys.
 
 # Strings and Arrays
 Common interview trick. In interviews, should treat any string questions as an array question. Strings are just an array of characters. Most of the time when you get a question like reverse a string, is to convert it to an array, do some kind of operation, and then returning it as a string after you've finished the operations with them. Common interview question. 
+
+# Exercise: Reverse a String 
+
+```js
+// Exercise Reverse a String
+// Create a function that reverses a string:
+// 'Hi My name is Andrei' should be:
+// 'ierdnA si eman iH'
+
+function reverse(str) {
+    const reversed =  str.split('').reverse().join('');
+    return reversed;
+
+    // or return str.split('').reverse().join('');
+}
+```

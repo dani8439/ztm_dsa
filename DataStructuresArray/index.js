@@ -83,3 +83,16 @@ newArray.push('nice');
 newArray.delete(1);
 
 console.log(newArray);
+
+//////////////////////
+// Exercise Reverse a String
+// Create a function that reverses a string:
+// 'Hi My name is Andrei' should be:
+// 'ierdnA si eman iH'
+
+function reverse(str) {
+    const reversed =  str.split('').reverse().join('');
+    return reversed;
+
+    // or return str.split('').reverse().join('');
+}
