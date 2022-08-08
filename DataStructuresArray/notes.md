@@ -186,3 +186,10 @@ Even fancier using the spread operator
 ```js
 const reverse4 = str => [...str].reverse().join('');
 ```
+
+# Exercise: Merge Sorted Arrays 
+
+```js
+mergeSortedArrays([0,3,4,31], [4,5,30]);
+// [0, 3, 4, 4, 6, 30, 31]
+```

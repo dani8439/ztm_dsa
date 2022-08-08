@@ -126,3 +126,12 @@ const reverse3 = str => str.split('').reverse().join('');
 
 // Fancier 
 const reverse4 = str => [...str].reverse().join('');
+
+///////
+// Exercise: Merge Sorted Arrays 
+// mergeSortedArrays([0,3,4,31], [4,5,30]);
+// [0, 3, 4, 4, 6, 30, 31]
+
+function mergeSortedArrays(arr1, arr2) {
+    return arr1.concat(arr2).sort();
+}
