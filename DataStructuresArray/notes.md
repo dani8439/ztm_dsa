@@ -228,3 +228,15 @@ function mergeSortedArrays(arr1, arr2) {
     return mergedArray;
 }
 ```
+
+# Arrays Summary 
+
+**When you should use an array:**
+1. Fast Lookups
+2. Fast push/pop
+3. Ordered. 
+
+**When you shouldn't use an array:**
+1. Slow insterts.
+2. Slow deletes.
+3. Fixed size* **if using static array*
