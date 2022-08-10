@@ -81,14 +81,12 @@ class HashTable {
   constructor(size){
     this.data = new Array(size);
     // [['grapes', 10000]]
-  }
-
-  set() {
-
-  }
-
-  get() {
-    
+    set = function(key, value) {
+        this.data[this._hash(key)] = value
+    };
+    get = function(key) {
+        console.log(this.data[this._hash(key)])
+    }
   }
 
   _hash(key) {
@@ -97,6 +95,74 @@ class HashTable {
         hash = (hash + key.charCodeAt(i) * i) % this.data.length
     }
     return hash;
+  }
+}
+
+const myHashTable = new HashTable(50);
+myHashTable.set('grapes', 10000)
+myHashTable.get('grapes')
+myHashTable.set('apples', 9)
+myHashTable.get('apples')
+```
+
+# Solution: Implement a Hash Table
+The underscore `_` is to implement private properties that can't be accessed from the outside. With JS ES6, put in the underscore to say it's a private property. Developer standard to let other people you shouldn't be accessing it, even though you technically can. 
+
+If we enter in `myHashTable._hash('grapes')`, creates a new variable with hash = 0. Key grabs the length of grapes, which is 6, add 0, which comes from the `let hash` and `key.charCodeAt()` gives us in interger between 0 and 65535 representing the UTF-16. Just an encoding. Saying give me a character code, because in memory a string or a letter is represented as a number. So we'll get the character code for g, multiply it, modulo operator to make sure it stays within the length of 50, the size of our data. Then return the hash. 
+
+Easiest way to see what's happening is to add in a `console.log(hash)` and watch it loop through `grapes` character by character. Generates a hash. Keeps going until we get 23 at the end. 
+
+Using our hash function, do our first method, lets create the set method. Recieves a key and a value.
+
+```js
+class HashTable {
+  constructor(size){
+    this.data = new Array(size);
+    // [['grapes', 10000]]
+}
+
+  _hash(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++){
+        hash = (hash + key.charCodeAt(i) * i) % this.data.length
+        console.log(hash)
+    }
+    return hash;
+  }
+
+  // O(1)
+
+  set(key, value) {
+    // store the data we're inserting, the key and value, in this address space that is created by our hash function. Give it the key of grapes. 
+    let address = this._hash(key);
+    // if this.data[address] doesn't exist and there's nothing there, because of hash collisions, in that case, add that data
+    if (!this.data[address]) {
+        this.data[address] = [];
+        // this.data[address].push([key, value])
+        // console.log(this.data)
+    } // otherwise if there is nothing in that address space, simply add onto that array this is nicer and cleaner so that when we run this 
+    // else {
+    this.data[address].push([key, value])
+    return this.data;
+  }
+  // O(1)
+
+  get(key) {
+    // going to the exact same thing, of running it through the black box hash function to get the address of where we want to go. 
+    let address = this._hash(key);
+    const currentBucket = this.data[address];
+    console.log(currentBucket);
+    // if current bucket has something in it, we'll do something, otehrwise return undefined because there's nothing in the bucket/array
+    if (currentBucket.length) {
+        for(let i = 0; i < currentBucket.length; i++) {
+            // apples, grapes, etc. If grapes matches with the key, in that case, return ...
+            if(currentBucket[i][0] === key) {
+                // because we want the 10000 number. It will be 54 if we switch to apples. 
+                return currentBucket[i][1];
+            }
+        }
+    } // O(1) or can become O(n) in our bad example. 
+    return undefined
   }
 }
 
