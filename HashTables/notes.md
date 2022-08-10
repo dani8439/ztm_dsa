@@ -73,3 +73,36 @@ A `Map` is created like `const a = new Map()`. Different between an object and a
 With an object there is no order. Our data is inserted randomly in different places. When we grab all the values of an object, there is no order like there is with arrays. But there are some versions of hash tables like maps in JS that maintain this order of insertion, so when we loop through, we have this maintained order. 
 
 `Set` is another feature, sort of like a Map, but it only stores the keys and no value. `const b = new Set()`. Each language comes with its own pre-built versions of data structures. At the end of the day, all of them are hash tables.
+
+# Exercise: Implement a Hash Table
+
+```js
+class HashTable {
+  constructor(size){
+    this.data = new Array(size);
+    // [['grapes', 10000]]
+  }
+
+  set() {
+
+  }
+
+  get() {
+    
+  }
+
+  _hash(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++){
+        hash = (hash + key.charCodeAt(i) * i) % this.data.length
+    }
+    return hash;
+  }
+}
+
+const myHashTable = new HashTable(50);
+myHashTable.set('grapes', 10000)
+myHashTable.get('grapes')
+myHashTable.set('apples', 9)
+myHashTable.get('apples')
+```
