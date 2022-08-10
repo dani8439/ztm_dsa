@@ -25,3 +25,39 @@ It takes `grapes` converts it to some gibberish where it's an index space for th
 Hash functions like `SHA-256` take a really long time. You want it to take longer when it's used with cryptogrophy. 
 
 To review, we have a key that is grapes, send it through a hash function that will hash something really fast, then map whatever it should be in the memory address where we want to store our data. We typically leave it to whatever framework or language we're using. Usually assume a Big O of `O(1)` as it happens really fast. 
+
+# Hash Collisions 
+
+Looking at hash functions we can think about what actions they perform and how fast it can be done. 
+
+`insert O(1)` we hash the key such as `.grapes` through the hash function and places it automatically into the address space.
+`lookup O(1)` same wasy as above. 
+`delete O(1)` same thing. Use the key, know where to delete the item from. Because it's not ordered, don't have to shift indexes. Everything is nice and simple. 
+`search O(1)` if we want to find something in our basket, that's easy too. Simply use hash functions. 
+
+```js
+let user = {
+    age: 54,
+    name: 'Kylie',
+    magic: true,
+    scream: function() {
+        console.log('ahhhhhhh!');
+    }
+}
+
+user.age // O(1)
+user.spell = 'abra kadabra'; // O(1)
+user.scream(); // O(1)
+```
+
+When we run this function above, everything gets placed in memory at different addresses. Can access everything really fast. O(1). Hash tables are amazing, we should be using them all the time! But in certain cases. Always pros and cons. 
+
+One of the main problems with hash tables. Hash function randomly assigns a space in memory. But nothing tells the hash function to evenly distribute until everything is full. But it also matters what we put into it. Puts two things in one spot. But does something funny when it does. It's called **collision** 
+
+**Collision** is when something gets hashed and stored in something called buckets. Goes to put something in the same address space. Need a way to store both users in the address space. Something funky is going on though. It's a new data structure (**Linked List**). With hash tables, we can't avoid this collision, especially with limited memory. 
+
+There is a possibility that we constantly just add to the same memory space. Which slows down our ability to access or insert information because now if we want to check what's in the address space, have to traverse the linked list. 
+
+Theoretically when you have a collision it slows down reading and writing a hash table with `O(n/k)` where `k` is the size of your hash table. And because we remove constants, it becomes an `O(n)` operation. Collision will likely happen in every hash table implementation. Not a common interview question, but do want to know abou tit so we can talk about it. 
+
+If we go to wikipedia, and Hash tables, and look at hash collision, there's a ton of different ways to solve this. There's separate chaining, open addressing, Robin Hood hashing. All sorts of ways to fix it. There is a bit of a downside. When we talk about fast lookups in hash tables, occasionally it might take O(n) depending on the hash function.
