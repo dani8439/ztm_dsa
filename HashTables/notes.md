@@ -61,3 +61,15 @@ There is a possibility that we constantly just add to the same memory space. Whi
 Theoretically when you have a collision it slows down reading and writing a hash table with `O(n/k)` where `k` is the size of your hash table. And because we remove constants, it becomes an `O(n)` operation. Collision will likely happen in every hash table implementation. Not a common interview question, but do want to know abou tit so we can talk about it. 
 
 If we go to wikipedia, and Hash tables, and look at hash collision, there's a ton of different ways to solve this. There's separate chaining, open addressing, Robin Hood hashing. All sorts of ways to fix it. There is a bit of a downside. When we talk about fast lookups in hash tables, occasionally it might take O(n) depending on the hash function.
+
+# Hash Tables in Different Languages 
+
+Hash tables are implemented differently in different languages. Most of the time the key and the value can be any type of data structure. Can have a function as a value. Another object if we want as a value. Can have an array. Can do this in arrays as well. Not just numbers and strings. Can also have keys that are more than just strings. Could potentially have functions as keys, and a value that is also a function. 
+
+In JS in an object, if you pass a key that is a number or a function, it gets stringified and it only allows string keys. With ES6, you have `Map` and `Sets`. 
+
+A `Map` is created like `const a = new Map()`. Different between an object and a map is that a map allows you to save any data type as the key. With an object you can only save the key as a string. With a map, it allows us if we want, to even have functions or arrays as keys. Another benefit of Map is that it maintains insertion order. 
+
+With an object there is no order. Our data is inserted randomly in different places. When we grab all the values of an object, there is no order like there is with arrays. But there are some versions of hash tables like maps in JS that maintain this order of insertion, so when we loop through, we have this maintained order. 
+
+`Set` is another feature, sort of like a Map, but it only stores the keys and no value. `const b = new Set()`. Each language comes with its own pre-built versions of data structures. At the end of the day, all of them are hash tables.
