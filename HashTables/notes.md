@@ -172,3 +172,30 @@ myHashTable.get('grapes')
 myHashTable.set('apples', 9)
 myHashTable.get('apples')
 ```
+
+# Keys()
+Keys allows us to iterate or loop through all the keys of our hash table (grapes and apples). If we run `key()` ideally it will iterate and spit out grapes, apples and oranges for us. 
+
+```js
+keys() {
+  const keysArary = [];
+  for (let i = 0; i < this.data.length; i++) {
+    if (this.data[i]) {
+      // gotcha need the [0] to remove outer array, and another [0] to get the actual element of grapes, apples, oranges
+      console.log(this.data[i][0][0]);
+      keysArray.push(this.data[i][0][0])
+    }
+  }
+  return keysArray;
+}
+
+const myHashTable = new HashTable(50);
+myHashTable.set('grapes', 10000);
+myHashTable.set('apples', 54);
+myHashTable.set('oranges', 2);
+myHashTable.keys();
+```
+
+Downside is we have to loop through the entire memory space in order to find our keys. So much easier with arrays. Imagine if we had a hash table of 500, huge amount of looping! Maybe if we're using this type of method with `keys()` objects might not be the best idea. 
+
+Can use `for in` loops in js to loop over items in an object. It's very very slow. No guaranteed order. 
