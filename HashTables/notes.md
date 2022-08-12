@@ -198,4 +198,4 @@ myHashTable.keys();
 
 Downside is we have to loop through the entire memory space in order to find our keys. So much easier with arrays. Imagine if we had a hash table of 500, huge amount of looping! Maybe if we're using this type of method with `keys()` objects might not be the best idea. 
 
-Can use `for in` loops in js to loop over items in an object. It's very very slow. No guaranteed order. 
+Can use `for in` loops in js to loop over items in an object. It's very very slow. No guaranteed order. Putting items randomly in a shelf but when we retrieve them they are randomly unordered. 
