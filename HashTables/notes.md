@@ -199,3 +199,31 @@ myHashTable.keys();
 Downside is we have to loop through the entire memory space in order to find our keys. So much easier with arrays. Imagine if we had a hash table of 500, huge amount of looping! Maybe if we're using this type of method with `keys()` objects might not be the best idea. 
 
 Can use `for in` loops in js to loop over items in an object. It's very very slow. No guaranteed order. Putting items randomly in a shelf but when we retrieve them they are randomly unordered. 
+
+# Extra: keys() Without Collision
+
+Enhanced `keys()` method to include hash collision prevention.
+
+```js
+ keys() {
+    if (!this.data.length) {
+      return undefined
+    }
+    let result = []
+    // loop through all the elements
+    for (let i = 0; i < this.data.length; i++) {
+        // if it's not an empty memory cell
+        if (this.data[i] && this.data[i].length) {
+          // but also loop through all the potential collisions
+          if (this.data.length > 1) {
+            for (let j = 0; j < this.data[i].length; j++) {
+              result.push(this.data[i][j][0])
+            }
+          } else {
+            result.push(this.data[i][0])
+          } 
+        }
+    }
+    return result; 
+  }
+```
