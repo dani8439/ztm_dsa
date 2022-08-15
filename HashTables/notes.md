@@ -238,3 +238,25 @@ insert O(n)    |        delete O(1)
 delete O(n)    |
 
 Why Hash Tables? They're great when you want quick access to certain values. Searching through an array for an item takes a long time, have to loop through the entire array. With hash tables it's really fast. It's why you see Hash tables in places like databases. Similarly, inserting items in a hash table, unlike an array that might shift indexes, is typically O(1). Simply have to hash and create the key. Although we have those cases of collision, most of the time we don't have to worry about it too much and have an insert of O(1). Arrays let you look up the value for a given key. Keys are called indexes in an array, don't get to pick them. In hash tables we can pick them. So hash tables is kind of like a hack on top of an array to let us use flexible keys instead of being stuck with 1, 2, 3. A problem with hash tables is that is the idea of no concept of order. In arrays each item is placed next to each other in memory. Hash tables are kind of placed all over in memory. 
+
+# Exercise: First recurring CHaracter 
+
+```js
+//Google Question
+//Given an array = [2,5,1,2,3,5,1,2,4]:
+//It should return 2
+
+//Given an array = [2,1,1,2,3,5,1,2,4]:
+//It should return 1
+
+//Given an array = [2,3,4,5]:
+//It should return undefined
+
+
+function firstRecurringCharacter(input) 
+}
+
+//Bonus... What if we had this:
+// [2,5,5,2,3,5,1,2,4]
+// return 5 because the pairs are before 2,2
+```
