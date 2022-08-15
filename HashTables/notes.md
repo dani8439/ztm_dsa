@@ -260,3 +260,65 @@ function firstRecurringCharacter(input) {
 // [2,5,5,2,3,5,1,2,4]
 // return 5 because the pairs are before 2,2
 ```
+
+# Solution: First Recurring Character
+
+
+Naive approach. Nested for loop. O(n^2)
+```js 
+function firstRecurringCharacter(input) {
+  for (let i = 0; i < input.length; i++) {
+    // start at 1 to compare with the second character, skipping a loop
+    // trick to always go 1 to the right of where i is in the indexes so it loops properly in the sub loop. So as the i loop shifts, so too does the j loop.
+    for (let j = i+1; j < input.length; j++) {
+      if (input[i] === input[j]) {
+        return input[i];
+      }
+    }
+  }
+  return undefined
+}
+```
+
+This works. Nice and simple. But we're not being very efficient. Have nested loops, so it's O(n^2) which is O(n). Although technically we're always looping more efficient because if i+1, in the end, when you remove the constants and simplify, still O(n^2).
+
+How can we simplify it using hash tables?
+
+```js
+function firstRecurringCharacter2(input) {
+  // lets use a hash table, or an object to do something interesting. That is to add the characters as we iterate one by one to a hash table, and while we're doing that, we can check to see if the property or key already exists. 
+  let map = {};
+  for (let i = 0; i < input.length; i++) {
+    // console.log(map[input[i]]);
+    // if the property exists, return the item... stop all the looping as soon as the key exists in the map. 
+    // but we need to specify we don't want it equal to undefined because otherwise js coerces 0 to falsey and causes all sorts of isssues. 
+    if(map[input[i]] !== undefined) {
+      return input[i]
+    } else {
+      // if it doesn't exist, add it to our map so it's there for the next loop to check.
+      map[input[i]] = i
+    }
+  }
+  console.log(map) // to see the actual iteration happening until it stops when it encounters a character again.
+  return undefined;
+}
+```
+
+This version is way faster using hash tables than our first version. O(n) time complexity, with 1 downside of increasing the space complexity (memory) by O(n) because we're creating a new object (the map) that needs to keep track of the array. First one has space complexity of O(1), but this one in return we have a faster function. 
+
+Challenge, what if there's a duplicate before 2,2? Second version, we'd get 5. First function, we'd get 2. `[2,5,5,2,3,5,1,2,4]` In 1st solution, it'll detect 2 first before comparing 5 with 5. Where in the second version, our hash table, we have all the items and compare them once we grab all of them. Might have a wrong answer depending on what the interviewer asks. 
+
+Bonus (converting first solution to second solution) to find 5 first and not the 2:
+
+```js
+function firstRecurringCharacter(input) {
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 1; j < input.length; j++) {
+      if ((input[j] === input[j+i]) && ((j+i) <= input.length)) {
+        return input[j]
+      }
+    }
+  }
+  return undefined
+}
+```
