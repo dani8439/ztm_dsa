@@ -253,7 +253,7 @@ Why Hash Tables? They're great when you want quick access to certain values. Sea
 //It should return undefined
 
 
-function firstRecurringCharacter(input) 
+function firstRecurringCharacter(input) {
 }
 
 //Bonus... What if we had this:

@@ -34,7 +34,17 @@ myHashTable.get('apples')
 //It should return undefined
 
 
-function firstRecurringCharacter(input) 
+function firstRecurringCharacter(input) {
+  let map = {};
+  for (let i = 0; i < input.length; i++) {
+    if (map[input[i]] !== undefined) {
+      return input[i]
+    } else {
+      map[input[i]] = i;
+    }
+    console.log(map)
+  }
+  return undefined;
 }
 
 //Bonus... What if we had this:
