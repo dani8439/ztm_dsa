@@ -322,3 +322,13 @@ function firstRecurringCharacter(input) {
   return undefined
 }
 ```
+
+# Hash Tables Review 
+
+Should love them because they have fast lookups*, fast inserts, and flexible keys. *Good collision resolution needed. Pattern comes up again of shifting things from O(n^2) to linear time. Comes up frequently. Often don't have to worry about collision resolution as the language we use takes care of it underneath the hood.
+
+Downside is that they are unordered. And slow key iteration (If you want to grab all the keys from the hash table, have to go through the entire memory space).
+
+Looking through the cheat sheet, most is O(1), but some O(n) operations that can happen. Can understand with collisions might want to use linked lists. 
+
+Hash tables in interviews are usually useful for improving time complexity. Trade off is fast access, but more memory.
