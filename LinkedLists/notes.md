@@ -5,3 +5,7 @@
 And then came hash tables. They were great. Could store wherever we wanted in memory and hash tables would take care of it for us. Didn't have to worry about problems we had with arrays. Unfortunately, they weren't ordered. How can we solve this problem? Linked lists to the rescue. 
 
 Are Linked lists the best data structures? No. There are tradeoffs as always when it comes to data structures. 
+
+# What are Linked Lists?
+
+What is a linked list? It's a list that is linked. A singly linked list contains a set of nodes. Think of them as blocks, red and green elements. The value you wish to store, and the pointer to the next node in line. 
