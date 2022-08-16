@@ -8,4 +8,21 @@ Are Linked lists the best data structures? No. There are tradeoffs as always whe
 
 # What are Linked Lists?
 
-What is a linked list? It's a list that is linked. A singly linked list contains a set of nodes. Think of them as blocks, red and green elements. The value you wish to store, and the pointer to the next node in line. 
+What is a linked list? It's a list that is linked. A singly linked list contains a set of nodes. Think of them as blocks, red and green elements. The value you wish to store, and the pointer to the next node in line. Each first node is called the head, and the last node is called the tail. Some people like to call anything after the head, the tail. Preferential thing. 
+
+Linked lists are null terminated, which signifies that it's the end of the list. Know the tail node is the end as it points to null.
+
+Pointer - you hear it a lot in programming and computer science. To focus on linked lists, it's a very simple data structure, simply an element that links to the next element that links to the next element, keeps going until the last element that points to null. Can have them sorted, unsorted, and nodes containing any kind of data type. 
+
+```js
+const basket = ['apples', 'grapes', 'pears'];
+
+// psuedo code linked list: apples --> grapes --> pears
+
+apples 
+8946 --> grapes 
+            8742 --> pears 
+                        372 --> null
+```
+
+JS doesn't come with linked lists built in. Different languages have different tools built in. JS doesn't have it. Java does. But luckily for us, we can build one! Have the building blocks to be able to build linked lists.
