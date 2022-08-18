@@ -47,3 +47,52 @@ Big O of linked lists:
 **lookup O(n)** have to go one by one. 
 **insert O(n)** have to go one by one. 
 **delete O(n)** have to go one by one. 
+
+# What is a Pointer? 
+
+A pointer is simply a reference to another place in memory or another object, or another node. In JS we can demonstrate it with something like:
+
+```js
+const obj1 = { a: true};
+const obj2 = obj1;
+```
+
+Just created a pointer, a reference to an object. Not copying the object. We are pointing to the original object in memory. Both obj1 and obj2 point to the same location in object memory. 
+
+```js
+const obj1 = { a: true};
+const obj2 = obj1;
+
+console.log('1', obj1);
+console.log('2', obj2);
+```
+
+If we change it and say: 
+
+```js
+let obj1 = { a: true};
+let obj2 = obj1;
+obj1.a = 'booya';
+console.log('1', obj1);
+console.log('2', obj2);
+
+// 1 {a: 'booya'}
+// 2 {a: 'booya'}
+```
+A pointer is just htat, this is where it lives in memory. When we remove something from a linked list, it just disappears from memory. How does that work? Going back to our example: 
+
+```js
+let obj1 = { a: true};
+let obj2 = obj1;
+obj1.a = 'booya';
+delete obj1
+console.log('1', obj1);
+console.log('2', obj2);
+/// ReferenceError
+```
+
+If we comment out `console.log('1', obj1)` we still get back `2 { a: 'booya' }`. What's happening here? The way it works in most programming languages, our computers delete the memory that's not used. As it sees that `obj2` still references the place in memory, it's not going to delete it as there's still the pointer there. This is what you might call garbage collection. 
+
+As soon as we say `obj2 = 'hello'`. Now, `obj2` which referenced the memory space that had true, is simply a string. Because js is simply garbage collected (memory is managed automatically), the `{a : true}` automatically gets deleted because nothing is pointing to it. However, there's low level languages where you have to manage your own memory and have to manually delete the unreferenced item. This can cause lots of issues when you leave memory that's not being used. But also benefits of that, can make things really fast and efficient.
+
+A pointer is simply a reference to something else in memory. 
