@@ -26,3 +26,9 @@ apples
 ```
 
 JS doesn't come with linked lists built in. Different languages have different tools built in. JS doesn't have it. Java does. But luckily for us, we can build one! Have the building blocks to be able to build linked lists.
+
+# Exercise: Why Linked Lists? 
+
+Why do you think linked lists might be better than hash tables or arrays? 
+
+Possibly that you can have more in depth lists with more space? For buried information within objects? Might make it easier to navigate. 
