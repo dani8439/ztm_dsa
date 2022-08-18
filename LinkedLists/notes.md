@@ -32,3 +32,18 @@ JS doesn't come with linked lists built in. Different languages have different t
 Why do you think linked lists might be better than hash tables or arrays? 
 
 Possibly that you can have more in depth lists with more space? For buried information within objects? Might make it easier to navigate. 
+
+# Solution: Why Linked Lists? 
+
+Linked lists have a sort of loose structure that allows you to insert a value into the middle of the list by simply resetting a few pointers. 
+
+In an array when we wanted to insert something that wasn't at the end, had to shift all the items down which cost us a lot of time (O(n)). Main difference between arrays and linked lists, in an array, elements are indexed. In a linked list, you start at the head and traverse the list until you get to whatever item you want, O(n). Traversal is different. Keep going until you hit null. Have to use something like a while loop because don't know how long the list will be.
+
+An array - most computers have caching systems which make reading from sequential memory faster than reading from scattered. Array items are always right next to each other in computer memory. Linked lists and nodes are scattered like hash tables. Iterating over linked lists are slower than arrays, even though both are technically O(n). The inserts you can do in the middle of a linked list are easier than with arrays. What about hash tables? When we insert, scatter all over memory and keep adding it. No unshifting as we do with arrays, which is really really nice. Can also delete nodes very easily versus with an array. One advantage that it has over hash tables is there's some kind of order in linked lists. Each node points to the next node. So can have sorted data, unlike hash tables. 
+
+Big O of linked lists:
+**prepend O(1)**
+**append O(1)**
+**lookup O(n)** have to go one by one. 
+**insert O(n)** have to go one by one. 
+**delete O(n)** have to go one by one. 
