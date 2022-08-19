@@ -5,10 +5,10 @@ const basket = ['apples', 'grapes', 'pears'];
 
 // psuedo code linked list: apples --> grapes --> pears
 
-apples 
-8946 --> grapes 
-            8742 --> pears 
-                        372 --> null
+// apples 
+// 8946 --> grapes 
+//             8742 --> pears 
+//                         372 --> null
 
 ///////////////////////
 /// What is a pointer?
@@ -28,3 +28,33 @@ console.log('4', obj2);
 
 // 1 {a: 'booya'}
 // 2 {a: 'booya'}
+
+////////////////////////
+// My First Linked List 
+
+// let myLinkedList = {
+//     head: {
+//         value: 10,
+//         next: {
+//             value: 5,
+//             next: {
+//                 value: 16,
+//                 next: null
+//             }
+//         }
+//     }
+// }
+
+class LinkedList {
+    constructor(value) {
+        this.head = {
+            value: value,
+            next: null
+        }
+        this.tail = this.head;
+        this.length = 1;
+    }
+}
+
+const myLinkedList = new LinkedList(10)
+console.log(myLinkedList)

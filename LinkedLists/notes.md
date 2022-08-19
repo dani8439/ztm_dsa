@@ -96,3 +96,38 @@ If we comment out `console.log('1', obj1)` we still get back `2 { a: 'booya' }`.
 As soon as we say `obj2 = 'hello'`. Now, `obj2` which referenced the memory space that had true, is simply a string. Because js is simply garbage collected (memory is managed automatically), the `{a : true}` automatically gets deleted because nothing is pointing to it. However, there's low level languages where you have to manage your own memory and have to manually delete the unreferenced item. This can cause lots of issues when you leave memory that's not being used. But also benefits of that, can make things really fast and efficient.
 
 A pointer is simply a reference to something else in memory. 
+
+# Our First Linked List
+
+10 ---> 5 ---> 16. How would we go about visualizing this in JS which has no linked lists? 
+
+```js
+let myLinkedList = {
+    head: {
+        value: 10,
+        next: {
+            value: 5,
+            next: {
+                value: 16,
+                next: null
+            }
+        }
+    }
+}
+```
+next points to next node. Things are in buckets, "objects."
+
+```js
+class LinkedList {
+    constructor(value) {
+        this.head = {
+            value: value,
+            next: null
+        }
+        this.tail = this.head
+        this.length = 1;
+    }
+}
+
+const myLinkedList = new LinkedList(10)
+```
