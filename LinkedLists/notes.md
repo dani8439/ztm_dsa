@@ -131,3 +131,12 @@ class LinkedList {
 
 const myLinkedList = new LinkedList(10)
 ```
+
+Our list is not complete. Need to complete the 10 -->5 -->16. Want to create an append method, that takes a value, and a piece of code that allows us to say. How would you go about doing that? 
+
+```js
+append(value);
+
+myLinkedList.append(5);
+myLinkedList.append(16);
+```
