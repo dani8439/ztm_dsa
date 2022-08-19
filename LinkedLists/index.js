@@ -56,6 +56,12 @@ class LinkedList {
     }
     append(value) {
         // Code here
+        this.node = {
+            value: value,
+            next: null
+        }
+        this.tail = this.node,
+        this.length = this.length++;
     }
 }
 
